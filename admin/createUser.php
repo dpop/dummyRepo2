@@ -4,6 +4,8 @@ session_start();
 use RedBeanPHP\R;
 
 echo getcwd();
+
+echo file_get_contents("../vendor/autoload.ph");
 //if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBeanPHP\OODBBean) || $_SESSION["loggedIn"]->getProperties()["role"] != "admin")
 //     die("not logged in");
 
