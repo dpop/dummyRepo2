@@ -22,15 +22,15 @@ var jsCodeMirror = CodeMirror.fromTextArea(document.getElementById("ThirdCodeWin
 });
 
 htmkCodeMirror.on("blur", function () {
-    sendData("/Schwan/actions/saveHtml.php",$("#html-hidden"),htmkCodeMirror.doc.getValue());
+    sendData("/actions/saveHtml.php",$("#html-hidden"),htmkCodeMirror.doc.getValue());
 });
 
 cssCodeMirror.on("blur", function () {
-    sendData("/Schwan/actions/saveCss.php",$("#css-hidden"),cssCodeMirror.doc.getValue());
+    sendData("/actions/saveCss.php",$("#css-hidden"),cssCodeMirror.doc.getValue());
 });
 
 jsCodeMirror.on("blur", function () {
-    sendData("/Schwan/actions/saveJs.php",$("#js-hidden"),jsCodeMirror.doc.getValue());
+    sendData("/actions/saveJs.php",$("#js-hidden"),jsCodeMirror.doc.getValue());
 });
 
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
     if (!location.origin)
         location.origin = location.protocol + "//" + location.host;
 
-    $("#result-frame").attr("src",location.origin + "/Schwan/display.php?sessionId="+sessionID);
+    $("#result-frame").attr("src",location.origin + "/display.php?sessionId="+sessionID);
 });
 
 

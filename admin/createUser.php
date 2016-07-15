@@ -21,4 +21,4 @@ if (isset($_REQUEST["username"]) && isset($_REQUEST["password"]) && isset($_REQU
 
 }
 
-header('Location: \Schwan\admin.php');
+header('Location: \admin.php');

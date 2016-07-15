@@ -6,7 +6,7 @@ use RedBeanPHP\R;
 if (!isset( $_REQUEST["sessionId"]))
 {
     $newSessionId = trim(getGUID());
-    header('Location: '."http://$_SERVER[HTTP_HOST]/Schwan/index.php?sessionId=".$newSessionId);
+    header('Location: '."http://$_SERVER[HTTP_HOST]/index.php?sessionId=".$newSessionId);
 }
 
 $sessionId = $_REQUEST["sessionId"];

@@ -3,7 +3,7 @@ include_once './vendor/autoload.php';
 
 $sessionId = $_REQUEST["sessionId"];
 
-$displayUrl = "http://$_SERVER[HTTP_HOST]/Schwan/display.php?sessionId=".$sessionId;
+$displayUrl = "http://$_SERVER[HTTP_HOST]/display.php?sessionId=".$sessionId;
 
 ?>
 
