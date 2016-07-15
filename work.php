@@ -1,6 +1,8 @@
 <?php
 
+use Klein\Klein;
 use RedBeanPHP\R;
+
 
 
 if (!isset( $_REQUEST["sessionId"]))
