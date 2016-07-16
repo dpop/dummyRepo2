@@ -10,7 +10,7 @@ use RedBeanPHP\R;
         echo $requestUser;
         R::setup('mysql:host=198.71.225.63;dbname=qbits_tek4kidz','tek4kidz','Aebaht4I');
         $user = R::findOne("users",' username LIKE ? ',[$requestUser]);
-        print_r($user);
+
         $x = $requestPassword == $user->getProperties()["password"];
         if ($user != null && $user->getProperties()["password"] == md5($requestPassword))
         {
@@ -31,7 +31,7 @@ use RedBeanPHP\R;
     <div class="divider"> </div>
 <div class="container">
     <div class="login-container">
-
+    <?php  if ($user !=null) print_r($user); ?>
     <div class="login-block">
         <form method="post" action="login.php">
             <input id ="username" type="text" name="username" placeholder="Username"> <br />
