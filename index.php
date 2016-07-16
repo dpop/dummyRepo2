@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'vendor/autoload.php';
+include_once './vendor/autoload.php';
 $loginUrl = "login.php";
 if (!isset( $_SESSION["loggedIn"]))
 {
