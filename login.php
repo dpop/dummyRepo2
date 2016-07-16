@@ -11,10 +11,9 @@ use RedBeanPHP\R;
         R::setup('mysql:host=198.71.225.63;dbname=qbits_tek4kidz','tek4kidz','Aebaht4I');
         $user = R::findOne("users",' username LIKE ? ',[$requestUser]);
 
-        $x = $requestPassword == $user->getProperties()["password"];
         if ($user != null && $user->getProperties()["password"] == md5($requestPassword))
         {
-            echo  md5($requestPassword);
+
             $_SESSION["loggedIn"] = $user;
             header('Location: index.php');
         }
@@ -32,7 +31,12 @@ use RedBeanPHP\R;
     <div class="divider"> </div>
 <div class="container">
     <div class="login-container">
-    <?php  if ($user !=null) print_r($user); ?>
+    <?php  if ($user !=null)
+    {
+        print_r($user);
+        echo $requestPassword;
+        echo md5($requestPassword);
+    } ?>
     <div class="login-block">
         <form method="post" action="login.php">
             <input id ="username" type="text" name="username" placeholder="Username"> <br />
