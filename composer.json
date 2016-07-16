@@ -1,6 +1,7 @@
 {
     "require": {
         "klein/klein": "*",
-        "gabordemooij/redbean": "dev-master"
+        "gabordemooij/redbean": "dev-master",
+        "ext-mbstring": "*"
     }
 }
