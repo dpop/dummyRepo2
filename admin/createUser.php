@@ -25,6 +25,8 @@ try
     header('Location: \admin.php');
 }catch (Exception $e)
 {
+    echo $e->getMessage();
+
     print_r($e);
 }
 
