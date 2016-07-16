@@ -3,14 +3,14 @@ include_once './vendor/autoload.php';
 session_start();
 use RedBeanPHP\R;
 
-    $username = "testUser1";
-    $password = "test";
     if (isset($_POST["username"]))
     {
         $requestUser = $_POST["username"];
         $requestPassword = $_POST["password"];
+        echo $requestUser;
         R::setup('mysql:host=198.71.225.63;dbname=qbits_tek4kidz','tek4kidz','Aebaht4I');
         $user = R::findOne("users",' username LIKE ? ',[$requestUser]);
+        print_r($user);
         $x = $requestPassword == $user->getProperties()["password"];
         if ($user != null && $user->getProperties()["password"] == md5($requestPassword))
         {
