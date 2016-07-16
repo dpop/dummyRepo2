@@ -3,8 +3,8 @@ include_once '../vendor/autoload.php';
 session_start();
 use RedBeanPHP\R;
 
-//if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBeanPHP\OODBBean) || $_SESSION["loggedIn"]->getProperties()["role"] != "admin")
-//     die("not logged in");
+if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBeanPHP\OODBBean) || $_SESSION["loggedIn"]->getProperties()["role"] != "admin")
+     die("not logged in");
 try
 {
 

@@ -31,12 +31,6 @@ use RedBeanPHP\R;
     <div class="divider"> </div>
 <div class="container">
     <div class="login-container">
-    <?php  if ($user !=null)
-    {
-        print_r($user);
-        echo $requestPassword;
-        echo md5($requestPassword);
-    } ?>
     <div class="login-block">
         <form method="post" action="login.php">
             <input id ="username" type="text" name="username" placeholder="Username"> <br />

@@ -4,8 +4,8 @@ session_start();
 
 
 
-//if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBeanPHP\OODBBean) || $_SESSION["loggedIn"]->getProperties()["role"] != "admin" )
-//    header('Location: index.php');
+if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBeanPHP\OODBBean) || $_SESSION["loggedIn"]->getProperties()["role"] != "admin" )
+    header('Location: index.php');
 ?>
 
 <html>
