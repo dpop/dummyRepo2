@@ -18,7 +18,7 @@ if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBean
 <body>
 <h1> create users</h1>
 <div class="container-fluid ">
-    <form class="form-inline" method="post" action="admin/createUser.php">
+    <form class="form-horizontal" method="post" action="admin/createUser.php">
       <div class="form-group">
         <label for="exampleInputName2">Username:</label>
         <input type="text" class="form-control" name="username" placeholder="Jane Doe">
@@ -27,6 +27,7 @@ if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBean
             <label for="exampleInputEmail2">Password:</label>
             <input type="password" class="form-control" name="password" >
         </div>
+
         <div class="form-group">
             <label >Role:</label>
             <select class="form-control" name="role" >
@@ -38,6 +39,13 @@ if (!isset($_SESSION["loggedIn"]) || !($_SESSION["loggedIn"] instanceof \RedBean
         <label for="exampleInputEmail2">Email:</label>
         <input type="email" class="form-control" name ="email" placeholder="jane.doe@example.com">
       </div>
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" name ="name" placeholder="Jane Doe">
+        </div>
+
+
       <button type="submit" class="btn btn-primary">Create User</button>
     </form>
 </div>

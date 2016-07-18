@@ -36,7 +36,7 @@
 
         </div>
 
-        <div class="divider"> </div>
+        <div class="divider"> <div class="welcome-message"> Hello <?php echo $user->getProperties()["name"];  ?> </div> </div>
         <div class="container-fluid working-area">
             <div class="row">
                 <div class="col-md-6 code-area">
@@ -61,6 +61,7 @@
                         <div class="containe-results">
                             <div class="result-frame-container">
                                 <iframe id="result-frame"> </iframe>
+                                <div class="refresh-container"><a id="refresh-btn" href="#"><img src="public/images/tablet-button.png"></a></div>
                             </div>
                         </div>
                 </div>

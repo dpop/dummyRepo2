@@ -16,7 +16,7 @@ try
         $user->setProperty("username", $_REQUEST["username"]);
         $user->setProperty("password", md5($_REQUEST["password"]));
         $user->setProperty("role", $_REQUEST["role"]);
-
+        $user->setProperty("name", $_REQUEST["name"]);
         R::store($user);
 
 

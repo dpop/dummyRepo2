@@ -22,7 +22,7 @@ var jsCodeMirror = CodeMirror.fromTextArea(document.getElementById("ThirdCodeWin
 });
 
 htmkCodeMirror.on("blur", function () {
-    sendData("/actions/saveHtml.php",$("#html-hidden"),htmkCodeMirror.doc.getValue());
+        sendData("/actions/saveHtml.php",$("#html-hidden"),htmkCodeMirror.doc.getValue());
 });
 
 cssCodeMirror.on("blur", function () {
@@ -117,7 +117,16 @@ $(".saveProject").submit(function(e)
 });
 
 
-function sendData(url,hiddenContainer,codeValue)
+$("#refresh-btn").click(function(e)
+{
+    e.preventDefault();
+    sendData("/actions/saveHtml.php",$("#html-hidden"),htmkCodeMirror.doc.getValue(),false);
+    sendData("/actions/saveCss.php",$("#css-hidden"),cssCodeMirror.doc.getValue(),false);
+    sendData("/actions/saveJs.php",$("#js-hidden"),jsCodeMirror.doc.getValue());
+});
+
+
+function sendData(url,hiddenContainer,codeValue, stopRefresh)
 {
     if (codeValue ==  hiddenContainer.val())
         return;
@@ -128,7 +137,8 @@ function sendData(url,hiddenContainer,codeValue)
         success: function(result)
         {
             console.log(result);
-            $("#result-frame").attr("src",result);
+            if (stopRefresh != false)
+                $("#result-frame").attr("src",result);
         }
     });
     console.log(url +" has new value " + codeValue);

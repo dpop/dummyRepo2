@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="public/css/codemirror.css">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/tekStyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 <div class="logo-container">
@@ -13,6 +14,7 @@
 <div class="divider"> </div>
 
 <div class="projects-container">
+    <div> Create new project : <a class="create-btn btn btn-primary btn-circle" href="index.php"> <i class="fa fa-plus" aria-hidden="true"></i> </a></div>
     <table class="table">
         <thead>
         <tr >

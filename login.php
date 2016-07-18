@@ -28,7 +28,9 @@ use RedBeanPHP\R;
     <img src="public/images/logo.png" class="logo">
 </div>
 
-    <div class="divider"> </div>
+    <div class="divider">
+
+    </div>
 <div class="container">
     <div class="login-container">
     <div class="login-block">
