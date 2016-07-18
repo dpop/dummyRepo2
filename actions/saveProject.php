@@ -6,7 +6,7 @@ if (!isset($_SESSION["loggedIn"]))
     die("mue ponta");
 use RedBeanPHP\R;
 
-R::setup('mysql:host=198.71.225.63;dbname=qbits_tek4kidz','tek4kidz','Aebaht4I');
+R::setup('mysql:host=nj5rh9gto1v5n05t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=v0vy6pdz1i32xf7p','ge6dgnr0zsn542q9','ko35aey9vufosp63');
 if (isset ($_POST["projName"]))
 {
     $project = R::findOne("projects",' sessionId LIKE ? ',[$_POST["sessionId"]]);

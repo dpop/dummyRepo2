@@ -8,7 +8,7 @@ use RedBeanPHP\R;
         $requestUser = $_POST["username"];
         $requestPassword = $_POST["password"];
 
-        R::setup('mysql:host=198.71.225.63;dbname=qbits_tek4kidz','tek4kidz','Aebaht4I');
+        R::setup('mysql:host=nj5rh9gto1v5n05t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=v0vy6pdz1i32xf7p','ge6dgnr0zsn542q9','ko35aey9vufosp63');
         $user = R::findOne("users",' username LIKE ? ',[$requestUser]);
 
         if ($user != null && $user->getProperties()["password"] == md5($requestPassword))
