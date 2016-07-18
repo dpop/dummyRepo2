@@ -79,9 +79,11 @@
         </div>
 
         <div id="save-container">
-            <form class="saveProject" method="post" action="actions/saveProject.php">
-                <input  class="proj-name" name="proj-name" type="text" placeholder="Project Name">
-                <button id="submit"> Save </button>
+            <form class="saveProject form-inline" method="post" action="actions/saveProject.php">
+                <div class="form-group">
+                <input  class="proj-name form-control" name="proj-name" type="text" placeholder="Project Name">
+                <button id="submit" class="btn btn-primary btn-saveProj"> Save </button>
+                </div>
             </form>
         </div>
         <script src="public/js/jquery-2.2.4.js" ></script>
