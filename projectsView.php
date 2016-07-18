@@ -14,7 +14,7 @@
 <div class="divider"> </div>
 
 <div class="projects-container">
-    <div> Create new project : <a class="create-btn btn btn-primary btn-circle" href="index.php"> <i class="fa fa-plus" aria-hidden="true"></i> </a></div>
+    <div class="create-proj-container"> Create new project : <a class="create-btn btn btn-primary btn-circle" href="index.php"> <i class="fa fa-plus" aria-hidden="true"></i> </a></div>
     <table class="table">
         <thead>
         <tr >
