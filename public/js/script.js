@@ -120,9 +120,22 @@ $(".saveProject").submit(function(e)
 $("#refresh-btn").click(function(e)
 {
     e.preventDefault();
-    sendData("/actions/saveHtml.php",$("#html-hidden"),htmkCodeMirror.doc.getValue(),false);
-    sendData("/actions/saveCss.php",$("#css-hidden"),cssCodeMirror.doc.getValue(),false);
-    sendData("/actions/saveJs.php",$("#js-hidden"),jsCodeMirror.doc.getValue());
+    $.ajax({
+        url: "actions/saveInstance.php" ,
+        method: "POST",
+        data: {
+            html : htmkCodeMirror.doc.getValue(),
+            css: cssCodeMirror.doc.getValue(),
+            js: cssCodeMirror.doc.getValue(),
+            sessionId: getParameterByName("sessionId")
+        },
+        success: function(result)
+        {
+            console.log(result);
+            $("#result-frame").attr("src",result);
+        }
+    });
+
 });
 
 
