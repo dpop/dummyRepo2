@@ -1,12 +1,12 @@
 var htmkCodeMirror = CodeMirror.fromTextArea(document.getElementById("FirstCodeWindow"), {
-
+    lineNumbers: true,
     smartIdent: false,
     mode: "htmlmixed",
     extraKeys: {"Ctrl-Space": "autocomplete"},
     value: document.documentElement.innerHTML
 });
 var cssCodeMirror = CodeMirror.fromTextArea(document.getElementById("SecondCodeWindow"), {
-    lineNumbers: false,
+    lineNumbers: true,
     smartIdent: false,
     mode: "css",
     extraKeys: {"Ctrl-Space": "autocomplete"},
@@ -14,7 +14,7 @@ var cssCodeMirror = CodeMirror.fromTextArea(document.getElementById("SecondCodeW
 });
 
 var jsCodeMirror = CodeMirror.fromTextArea(document.getElementById("ThirdCodeWindow"), {
-    lineNumbers: false,
+    lineNumbers: true,
     smartIdent: false,
     mode:  "javascript",
     extraKeys: {"Ctrl-Space": "autocomplete"},
@@ -22,15 +22,15 @@ var jsCodeMirror = CodeMirror.fromTextArea(document.getElementById("ThirdCodeWin
 });
 
 htmkCodeMirror.on("blur", function () {
-        sendData("/actions/saveHtml.php",$("#html-hidden"),htmkCodeMirror.doc.getValue());
+        sendData("/saveHtml",$("#html-hidden"),htmkCodeMirror.doc.getValue());
 });
 
 cssCodeMirror.on("blur", function () {
-    sendData("/actions/saveCss.php",$("#css-hidden"),cssCodeMirror.doc.getValue());
+    sendData("/saveCss",$("#css-hidden"),cssCodeMirror.doc.getValue());
 });
 
 jsCodeMirror.on("blur", function () {
-    sendData("/actions/saveJs.php",$("#js-hidden"),jsCodeMirror.doc.getValue());
+    sendData("/saveJs",$("#js-hidden"),jsCodeMirror.doc.getValue());
 });
 
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
     if (!location.origin)
         location.origin = location.protocol + "//" + location.host;
 
-    $("#result-frame").attr("src",location.origin + "/display.php?sessionId="+sessionID);
+    $("#result-frame").attr("src",location.origin + "/display/"+sessionID);
 });
 
 
@@ -121,7 +121,7 @@ $("#refresh-btn").click(function(e)
 {
     e.preventDefault();
     $.ajax({
-        url: "actions/saveInstance.php" ,
+        url: "/saveInstance" ,
         method: "POST",
         data: {
             html : htmkCodeMirror.doc.getValue(),
@@ -159,11 +159,6 @@ function sendData(url,hiddenContainer,codeValue, stopRefresh)
 }
 
 function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+    return $("#sessionIdHolder").html();
 }

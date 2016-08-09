@@ -3,12 +3,8 @@ use RedBeanPHP\R;
 
 class DbInstanceHelper
 {
-    public static function saveCode($codeType)
+    public static function saveCode($codeType,$sessionId,$code)
     {
-        $sessionId = $_POST["sessionId"];
-
-        $code = $_POST['code'];
-
         $dbEntry = R::findOne("instance",' sessionID LIKE ? ',[$sessionId]);
 
         if ($dbEntry == null)

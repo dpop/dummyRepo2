@@ -133,7 +133,8 @@ body
 #code-container>iframe
 {
     border: none;
-    height:350px;
+    height:470px;
+    width: 310px;
 }
 
 #code-container
@@ -142,8 +143,8 @@ body
     right: 146px;
     position:absolute;
     display: none;
-    width: 350px;
-    height: 356px;
+    width: 360px;
+    height: 476px;
 }
 
 .programming-language
